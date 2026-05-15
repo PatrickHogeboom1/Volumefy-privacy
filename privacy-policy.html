@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacybeleid – Volume Guard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f5f5;
+            color: #1a1a1a;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ED7F27, #B2507C, #833357);
+            color: white;
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 24px 0;
+        }
+
+        .lang-toggle button {
+            padding: 8px 20px;
+            border: 2px solid #B2507C;
+            background: white;
+            color: #B2507C;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-toggle button.active,
+        .lang-toggle button:hover {
+            background: linear-gradient(135deg, #ED7F27, #B2507C);
+            border-color: transparent;
+            color: white;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 32px auto;
+            padding: 0 24px 64px;
+        }
+
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.active {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #131212;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0e8f5;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1em;
+            background: linear-gradient(to bottom, #ED7F27, #833357);
+            border-radius: 2px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 8px 0 12px 20px;
+            color: #333;
+        }
+
+        ul li {
+            margin-bottom: 6px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #FFF3E8, #F9EBF5);
+            border-left: 4px solid #B2507C;
+            border-radius: 0 8px 8px 0;
+            padding: 14px 18px;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        .effective-date {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        a {
+            color: #B2507C;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Volume Guard</h1>
+    <p>by Patrick Hogeboom &nbsp;·&nbsp; TwentyNice</p>
+</header>
+
+<div class="lang-toggle">
+    <button class="active" onclick="setLang('nl')">Nederlands</button>
+    <button onclick="setLang('en')">English</button>
+</div>
+
+<div class="container">
+
+    <!-- DUTCH -->
+    <div id="section-nl" class="lang-section active">
+
+        <div class="card">
+            <h2>Privacybeleid</h2>
+            <p>Dit privacybeleid is van toepassing op de Android-applicatie <strong>Volume Guard</strong>, ontwikkeld door Patrick Hogeboom (TwentyNice). Door de app te gebruiken ga je akkoord met dit beleid.</p>
+            <div class="highlight">Volume Guard verzamelt geen persoonsgegevens en verstuurt geen gegevens naar externe servers.</div>
+        </div>
+
+        <div class="card">
+            <h2>Welke gegevens worden opgeslagen?</h2>
+            <p>Volume Guard slaat uitsluitend de volgende gegevens lokaal op het apparaat op, in de beveiligde app-opslag (SharedPreferences):</p>
+            <ul>
+                <li>De ingestelde minimumvolumes per audiostream (media, beltoon, alarm, meldingen, systeem)</li>
+                <li>Of een audiostream is ingeschakeld voor bewaking</li>
+                <li>Een beveiligde hash (SHA-256) van de ingestelde pincode — de pincode zelf wordt <strong>nooit</strong> in leesbare tekst opgeslagen</li>
+            </ul>
+            <p>Deze gegevens zijn alleen toegankelijk voor de app zelf en worden niet gedeeld met derden.</p>
+        </div>
+
+        <div class="card">
+            <h2>Internetverbinding</h2>
+            <p>Volume Guard gebruikt <strong>geen internetverbinding</strong>. De app heeft geen netwerktoestemming en verstuurt geen gegevens naar externe servers, analyticsplatforms of cloudservices.</p>
+        </div>
+
+        <div class="card">
+            <h2>MDM / Beheerde configuraties</h2>
+            <p>Volume Guard ondersteunt beheerde configuraties (Managed Configurations) via Mobile Device Management (MDM)-oplossingen zoals Microsoft Intune, SOTI MobiControl en VMware Workspace ONE.</p>
+            <p>Configuratiewaarden worden door het besturingssysteem aangeboden aan de app. Er worden geen gegevens verstuurd naar externe MDM-servers vanuit de app.</p>
+        </div>
+
+        <div class="card">
+            <h2>Systeemmachtigingen</h2>
+            <p>De app vraagt de volgende machtigingen:</p>
+            <ul>
+                <li><strong>MODIFY_AUDIO_SETTINGS</strong> – om het minimumvolume te kunnen afdwingen</li>
+                <li><strong>FOREGROUND_SERVICE</strong> – om als achtergrondservice actief te blijven</li>
+                <li><strong>RECEIVE_BOOT_COMPLETED</strong> – om automatisch te starten na het opstarten van het apparaat</li>
+                <li><strong>POST_NOTIFICATIONS</strong> (Android 13+) – voor de vereiste servicemelding in de statusbalk</li>
+            </ul>
+            <p>Geen van deze machtigingen wordt gebruikt om persoonsgegevens te verwerken.</p>
+        </div>
+
+        <div class="card">
+            <h2>Gegevens van minderjarigen</h2>
+            <p>Volume Guard verzamelt bewust geen gegevens van personen jonger dan 16 jaar. De app is een zakelijk hulpmiddel en niet gericht op minderjarigen.</p>
+        </div>
+
+        <div class="card">
+            <h2>Wijzigingen in dit beleid</h2>
+            <p>Dit privacybeleid kan worden bijgewerkt bij nieuwe versies van de app. De actuele versie is altijd beschikbaar op deze pagina. Wijzigingen worden van kracht op de datum van publicatie.</p>
+        </div>
+
+        <div class="card">
+            <h2>Contact</h2>
+            <p>Voor vragen over dit privacybeleid kun je contact opnemen via:</p>
+            <ul>
+                <li><strong>Naam:</strong> Patrick Hogeboom</li>
+                <li><strong>Organisatie:</strong> TwentyNice</li>
+                <li><strong>E-mail:</strong> <a href="mailto:info@twentynice.nl">info@twentynice.nl</a></li>
+            </ul>
+        </div>
+
+        <p class="effective-date">Ingangsdatum: 14 mei 2026 &nbsp;·&nbsp; Volume Guard v1.1.3</p>
+
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="section-en" class="lang-section">
+
+        <div class="card">
+            <h2>Privacy Policy</h2>
+            <p>This privacy policy applies to the Android application <strong>Volume Guard</strong>, developed by Patrick Hogeboom (TwentyNice). By using the app, you agree to this policy.</p>
+            <div class="highlight">Volume Guard does not collect any personal data and does not transmit any data to external servers.</div>
+        </div>
+
+        <div class="card">
+            <h2>What data is stored?</h2>
+            <p>Volume Guard stores only the following data locally on the device, in the app's secure storage (SharedPreferences):</p>
+            <ul>
+                <li>The configured minimum volumes per audio stream (media, ringtone, alarm, notifications, system)</li>
+                <li>Whether an audio stream is enabled for monitoring</li>
+                <li>A secure hash (SHA-256) of the configured PIN code — the PIN itself is <strong>never</strong> stored in plain text</li>
+            </ul>
+            <p>This data is only accessible to the app itself and is not shared with third parties.</p>
+        </div>
+
+        <div class="card">
+            <h2>Internet connection</h2>
+            <p>Volume Guard does <strong>not use an internet connection</strong>. The app has no network permission and does not transmit any data to external servers, analytics platforms, or cloud services.</p>
+        </div>
+
+        <div class="card">
+            <h2>MDM / Managed Configurations</h2>
+            <p>Volume Guard supports Managed Configurations via Mobile Device Management (MDM) solutions such as Microsoft Intune, SOTI MobiControl, and VMware Workspace ONE.</p>
+            <p>Configuration values are delivered to the app by the operating system. No data is sent to external MDM servers from within the app.</p>
+        </div>
+
+        <div class="card">
+            <h2>System permissions</h2>
+            <p>The app requests the following permissions:</p>
+            <ul>
+                <li><strong>MODIFY_AUDIO_SETTINGS</strong> – to enforce the minimum volume</li>
+                <li><strong>FOREGROUND_SERVICE</strong> – to remain active as a background service</li>
+                <li><strong>RECEIVE_BOOT_COMPLETED</strong> – to start automatically after the device boots</li>
+                <li><strong>POST_NOTIFICATIONS</strong> (Android 13+) – for the required service notification in the status bar</li>
+            </ul>
+            <p>None of these permissions are used to process personal data.</p>
+        </div>
+
+        <div class="card">
+            <h2>Data of minors</h2>
+            <p>Volume Guard does not knowingly collect data from persons under the age of 16. The app is a business tool and is not directed at minors.</p>
+        </div>
+
+        <div class="card">
+            <h2>Changes to this policy</h2>
+            <p>This privacy policy may be updated with new versions of the app. The current version is always available on this page. Changes take effect on the date of publication.</p>
+        </div>
+
+        <div class="card">
+            <h2>Contact</h2>
+            <p>For questions about this privacy policy, please contact:</p>
+            <ul>
+                <li><strong>Name:</strong> Patrick Hogeboom</li>
+                <li><strong>Organisation:</strong> TwentyNice</li>
+                <li><strong>Email:</strong> <a href="mailto:info@twentynice.nl">info@twentynice.nl</a></li>
+            </ul>
+        </div>
+
+        <p class="effective-date">Effective date: May 14, 2026 &nbsp;·&nbsp; Volume Guard v1.1.3</p>
+
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Patrick Hogeboom &nbsp;·&nbsp; TwentyNice &nbsp;·&nbsp; Volume Guard
+</footer>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+        document.getElementById('section-' + lang).classList.add('active');
+        event.target.classList.add('active');
+        document.documentElement.lang = lang;
+    }
+</script>
+
+</body>
+</html>
